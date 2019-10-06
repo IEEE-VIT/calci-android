@@ -2,7 +2,7 @@
 
 # Hacktoberfest, 2019 with IEEE-VIT Student Branch
 
-SimpleMath is a node.js REST API that does math for you. This repository was created to help deveopers get started with Open Source during [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
+Calci is a simple android calculator app. This repository was created to help deveopers get started with Open Source during [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
 > NOTE: Check out `issues` labelled as `Hacktoberfest` and start contributing!
 
 Made with :heart: by [IEEE-VIT](https://ieeevit.com)
@@ -11,7 +11,7 @@ Support Open Source by participating in [Hacktoberfest](https://hacktoberfest.di
 
 ## Getting started
 
-1. Download the Telegram source code from https://github.com/IEEE-VIT/Calci-Android/ ( git clone https://github.com/IEEE-VIT/Calci-Android.git )
+1. Download the Calci source code from https://github.com/IEEE-VIT/Calci-Android/ ( git clone https://github.com/IEEE-VIT/Calci-Android.git )
 
 2. Open the project in the Studio (note that it should be opened, NOT imported).
 
