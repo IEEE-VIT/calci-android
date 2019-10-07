@@ -93,15 +93,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private double sub(double a, double b){
-        return  a + b;
+        return  a - b;
     }
 
     private double mul(double a, double b){
-        return  a + b;
+        return  a * b;
     }
 
     private double div(double a, double b){
-        return a + b;
+        return a / b;
     }
 
     private void calculateAnswer(){
