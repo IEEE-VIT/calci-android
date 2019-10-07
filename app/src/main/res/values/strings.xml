@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Calci</string>
+    <string name="current_calculation">Current Calculation</string>
+    <string name="total_calculation">Total Calculation</string>
 </resources>
