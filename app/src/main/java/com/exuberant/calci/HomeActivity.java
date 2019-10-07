@@ -3,6 +3,7 @@ package com.exuberant.calci;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,7 +12,9 @@ import com.google.android.material.button.MaterialButton;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "HomeActivity";
     private String currentNumber = "", totalCalculation = "";
+
     private TextView totalCalculationTextView, currentAnswerTextView;
 
     @Override
@@ -66,6 +69,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 calculateAnswer();
                 break;
 
+
             //Handle other numerical button clicks
             default:
                 currentNumber += button.getText().toString();
@@ -83,8 +87,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             totalCalculation += currentNumber + operator;
             currentNumber = "";
         } else {
-            totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
-            totalCalculation += operator;
+            if (!totalCalculation.isEmpty()) {
+
+                totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
+                totalCalculation += operator;
+
+            }
         }
     }
 
@@ -107,6 +115,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void calculateAnswer(){
         //Use totalCalculation string to get final answer and display it
         double answer = 0.0;
+        currentNumber = "";
+        Log.d(TAG, "calculateAnswer: totalCalculationString : " + totalCalculation);
         updateDisplay();
     }
 }
