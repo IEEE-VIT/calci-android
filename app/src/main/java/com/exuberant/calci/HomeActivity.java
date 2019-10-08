@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.exuberant.calci.utility.Expression;
 import com.google.android.material.button.MaterialButton;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String currentNumber = "", totalCalculation = "";
+    private String currentEquation = "", totalCalculation = "";
     private TextView totalCalculationTextView, currentAnswerTextView;
 
     @Override
@@ -46,67 +47,35 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         MaterialButton button = (MaterialButton) view;
         int id = button.getId();
         switch (id){
-            //Handling all operators
-            case R.id.btn_addition :
-            case R.id.btn_division :
-            case R.id.btn_multiplication :
-            case R.id.btn_subtraction :
-                handleOperatorClick(button.getText().toString());
-                break;
-
             //Handling clear button
             case R.id.btn_clear:
-                currentNumber = "";
+                currentEquation = "";
                 totalCalculation = "";
                 break;
 
             //Handle calculation
             case R.id.btn_equals:
-                totalCalculation += currentNumber;
+                //totalCalculation += currentNumber;
                 calculateAnswer();
                 break;
 
-            //Handle other numerical button clicks
+            //Handle other button clicks
             default:
-                currentNumber += button.getText().toString();
+                currentEquation += button.getText().toString();
         }
         updateDisplay();
     }
 
     private void updateDisplay(){
         totalCalculationTextView.setText(totalCalculation);
-        currentAnswerTextView.setText(currentNumber);
-    }
-
-    private void handleOperatorClick(String operator){
-        if (!(currentNumber.equals("") || currentNumber.length() == 0)) {
-            totalCalculation += currentNumber + operator;
-            currentNumber = "";
-        } else {
-            totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
-            totalCalculation += operator;
-        }
-    }
-
-    private double add(double a, double b){
-        return a + b;
-    }
-
-    private double sub(double a, double b){
-        return  a - b;
-    }
-
-    private double mul(double a, double b){
-        return  a * b;
-    }
-
-    private double div(double a, double b){
-        return a / b;
+        currentAnswerTextView.setText(currentEquation);
     }
 
     private void calculateAnswer(){
         //Use totalCalculation string to get final answer and display it
-        double answer = 0.0;
+        double answer = Expression.evaluateExpression(currentEquation);
+        totalCalculation = currentEquation;
+        currentEquation = String.valueOf(answer);
         updateDisplay();
     }
 }
