@@ -132,6 +132,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         {
             answer = mul(firstOperand, secondOperand);
         }
+        currentNumber = String.valueOf(answer);
         updateDisplay();
     }
 }
