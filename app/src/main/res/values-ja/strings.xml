@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Calci</string>
-    <string name="total_calculation">Total calculation </string>
-    <string name="current_calculation">Current calculation</string>
+    <string name="total_calculation">合計計算</string>
+    <string name="current_calculation">現在の計算</string>
     <string name="clear">C</string>
     <string name="left_parenthese">(</string>
     <string name="right_parenthese">)</string>
