@@ -85,7 +85,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_eight" />
 
     <com.google.android.material.button.MaterialButton
-        android:text="X"
+        android:text="x"
         android:textColor="@android:color/white"
         android:backgroundTint="@color/colorOperatorKey"
         android:id="@+id/btn_multiplication"
