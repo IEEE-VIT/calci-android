@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -92,8 +96,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             totalCalculation += currentNumber + operator;
             currentNumber = "";
         } else {
-            totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
-            totalCalculation += operator;
+            if(totalCalculation.equals("") || totalCalculation.length() == 0)
+            {
+                Toast.makeText(getApplicationContext(), "Please enter operands first", Toast.LENGTH_SHORT)
+                        .show();
+            }
+            else {
+                totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
+                totalCalculation += operator;
+            }
         }
     }
 
