@@ -1,23 +1,33 @@
 package com.exuberant.calci;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private String currentNumber = "", totalCalculation = "";
+    private char operator ;
+    private double firstOperand;
+    private double secondOperand;
     private TextView totalCalculationTextView, currentAnswerTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        initializeViews();
+
+    }
+
+    private void initializeViews() {
         findViewById(R.id.btn_zero).setOnClickListener(this);
         findViewById(R.id.btn_one).setOnClickListener(this);
         findViewById(R.id.btn_two).setOnClickListener(this);
@@ -62,8 +72,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             //Handle calculation
             case R.id.btn_equals:
+                firstOperand = Double.valueOf(totalCalculation.substring(0,totalCalculation.length()-1));
+                secondOperand = Double.valueOf(currentNumber);
+                operator = totalCalculation.charAt(totalCalculation.length()-1);
                 totalCalculation += currentNumber;
-                calculateAnswer();
+                calculateAnswer(firstOperand, secondOperand, operator);
                 break;
 
             //Handle other numerical button clicks
@@ -83,8 +96,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             totalCalculation += currentNumber + operator;
             currentNumber = "";
         } else {
-            totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
-            totalCalculation += operator;
+            if(totalCalculation.equals("") || totalCalculation.length() == 0)
+            {
+                Toast.makeText(getApplicationContext(), "Please enter operands first", Toast.LENGTH_SHORT)
+                        .show();
+            }
+            else {
+                totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
+                totalCalculation += operator;
+            }
         }
     }
 
@@ -104,9 +124,26 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         return a / b;
     }
 
-    private void calculateAnswer(){
+    private void calculateAnswer(Double firstOperand, Double secondOperand, char operator){
         //Use totalCalculation string to get final answer and display it
         double answer = 0.0;
+        if(operator == '+')
+        {
+             answer = add(firstOperand, secondOperand);
+        }
+        else if(operator == '-')
+        {
+            answer = sub(firstOperand, secondOperand);
+        }
+        else if (operator == '/')
+        {
+            answer = div(firstOperand, secondOperand);
+        }
+        else
+        {
+            answer = mul(firstOperand, secondOperand);
+        }
+        currentNumber = String.valueOf(answer);
         updateDisplay();
     }
 }
