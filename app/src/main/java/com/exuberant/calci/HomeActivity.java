@@ -11,7 +11,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String currentNumber = "", totalCalculation = "";
+    private String currentNumber = "0", totalCalculation = "0";
     private TextView totalCalculationTextView, currentAnswerTextView;
 
     @Override
@@ -56,8 +56,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             //Handling clear button
             case R.id.btn_clear:
-                currentNumber = "";
-                totalCalculation = "";
+                currentNumber = "0";
+                totalCalculation = "0";
                 break;
 
             //Handle calculation
@@ -68,7 +68,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             //Handle other numerical button clicks
             default:
-                currentNumber += button.getText().toString();
+                if(!currentNumber.equals("0")){
+                    currentNumber += button.getText().toString();
+                }else{
+                    currentNumber = button.getText().toString();
+                }
         }
         updateDisplay();
     }
@@ -81,7 +85,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void handleOperatorClick(String operator){
         if (!(currentNumber.equals("") || currentNumber.length() == 0)) {
             totalCalculation += currentNumber + operator;
-            currentNumber = "";
+            currentNumber = "0";
         } else {
             totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
             totalCalculation += operator;
