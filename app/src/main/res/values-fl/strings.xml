@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Calci</string>
+    <string name="current_calculation">Aktuelle Berechnung</string>
+    <string name="total_calculation">Gesamtberechnung</string>
+</resources>
