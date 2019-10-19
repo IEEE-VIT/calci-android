@@ -87,6 +87,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             totalCalculation += operator;
         }
     }
+// all the listed calculation
 
     private double add(double a, double b){
         return a + b;
