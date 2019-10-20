@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calci</string>
+    <string name="current_calculation">現在の計算</string>
+    <string name="total_calculation">合計</string>
+</resources>
