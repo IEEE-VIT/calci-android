@@ -4,19 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="onClick"
     android:orientation="vertical">
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_mod"
+        style="@style/CalculatorKeys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/colorOperatorKey"
+        android:onClick="onClick"
+        android:text="%"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btn_equals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addition" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_clear"
-        android:text="C"
-        android:backgroundTint="@color/colorClearKey"
         style="@style/CalculatorKeys"
         android:layout_marginTop="16dp"
         android:alpha="0.8"
+        android:backgroundTint="@color/colorClearKey"
+        android:text="C"
+        android:textColor="#F19CD6"
         app:layout_constraintBottom_toTopOf="@+id/btn_seven"
         app:layout_constraintEnd_toStartOf="@+id/btn_opening_brace"
         app:layout_constraintHorizontal_bias="0.5"
-        android:textColor="#F19CD6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,8 +48,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_closing_brace"
-        android:text=")"
         style="@style/CalculatorKeys"
+        android:text=")"
         app:layout_constraintBottom_toBottomOf="@+id/btn_opening_brace"
         app:layout_constraintEnd_toStartOf="@+id/btn_division"
         app:layout_constraintHorizontal_bias="0.5"
@@ -43,10 +58,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_division"
+        style="@style/CalculatorKeys"
+        android:backgroundTint="@color/colorOperatorKey"
         android:text="/"
         android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorOperatorKey"
-        style="@style/CalculatorKeys"
         app:layout_constraintBottom_toBottomOf="@+id/btn_closing_brace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -56,8 +71,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_seven"
-        android:text="7"
         style="@style/CalculatorKeys"
+        android:text="7"
         app:layout_constraintBottom_toTopOf="@+id/btn_four"
         app:layout_constraintEnd_toStartOf="@+id/btn_eight"
         app:layout_constraintHorizontal_bias="0.5"
@@ -66,8 +81,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_eight"
-        android:text="8"
         style="@style/CalculatorKeys"
+        android:text="8"
         app:layout_constraintBottom_toBottomOf="@+id/btn_seven"
         app:layout_constraintEnd_toStartOf="@+id/btn_nine"
         app:layout_constraintHorizontal_bias="0.5"
@@ -75,9 +90,9 @@
         app:layout_constraintTop_toTopOf="@+id/btn_seven" />
 
     <com.google.android.material.button.MaterialButton
-        android:text="9"
         android:id="@+id/btn_nine"
         style="@style/CalculatorKeys"
+        android:text="9"
         app:layout_constraintBottom_toBottomOf="@+id/btn_eight"
         app:layout_constraintEnd_toStartOf="@+id/btn_multiplication"
         app:layout_constraintHorizontal_bias="0.5"
@@ -85,11 +100,11 @@
         app:layout_constraintTop_toTopOf="@+id/btn_eight" />
 
     <com.google.android.material.button.MaterialButton
-        android:text="X"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorOperatorKey"
         android:id="@+id/btn_multiplication"
         style="@style/CalculatorKeys"
+        android:backgroundTint="@color/colorOperatorKey"
+        android:text="X"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/btn_nine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -98,8 +113,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_four"
-        android:text="4"
         style="@style/CalculatorKeys"
+        android:text="4"
         app:layout_constraintBottom_toTopOf="@+id/btn_one"
         app:layout_constraintEnd_toStartOf="@+id/btn_five"
         app:layout_constraintHorizontal_bias="0.5"
@@ -108,8 +123,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_five"
-        android:text="5"
         style="@style/CalculatorKeys"
+        android:text="5"
         app:layout_constraintBottom_toBottomOf="@+id/btn_four"
         app:layout_constraintEnd_toStartOf="@+id/btn_six"
         app:layout_constraintHorizontal_bias="0.5"
@@ -118,8 +133,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_six"
-        android:text="6"
         style="@style/CalculatorKeys"
+        android:text="6"
         app:layout_constraintBottom_toBottomOf="@+id/btn_five"
         app:layout_constraintEnd_toStartOf="@+id/btn_subtraction"
         app:layout_constraintHorizontal_bias="0.5"
@@ -129,9 +144,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_subtraction"
         style="@style/CalculatorKeys"
+        android:backgroundTint="@color/colorOperatorKey"
         android:text="-"
         android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorOperatorKey"
         app:layout_constraintBottom_toBottomOf="@+id/btn_six"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -140,8 +155,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_one"
-        android:text="1"
         style="@style/CalculatorKeys"
+        android:text="1"
         app:layout_constraintBottom_toTopOf="@+id/btn_zero"
         app:layout_constraintEnd_toStartOf="@+id/btn_two"
         app:layout_constraintHorizontal_bias="0.5"
@@ -150,8 +165,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_two"
-        android:text="2"
         style="@style/CalculatorKeys"
+        android:text="2"
         app:layout_constraintBottom_toBottomOf="@+id/btn_one"
         app:layout_constraintEnd_toStartOf="@+id/btn_three"
         app:layout_constraintHorizontal_bias="0.5"
@@ -171,9 +186,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_addition"
         style="@style/CalculatorKeys"
+        android:backgroundTint="@color/colorOperatorKey"
         android:text="+"
         android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorOperatorKey"
         app:layout_constraintBottom_toBottomOf="@+id/btn_three"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -205,9 +220,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_equals"
         style="@style/CalculatorKeys"
+        android:backgroundTint="@color/colorEqualKey"
         android:text="="
         android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorEqualKey"
         app:layout_constraintBottom_toBottomOf="@+id/btn_point"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -23,6 +23,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_two).setOnClickListener(this);
         findViewById(R.id.btn_three).setOnClickListener(this);
         findViewById(R.id.btn_four).setOnClickListener(this);
+        findViewById(R.id.btn_mod).setOnClickListener(this);
         findViewById(R.id.btn_five).setOnClickListener(this);
         findViewById(R.id.btn_six).setOnClickListener(this);
         findViewById(R.id.btn_seven).setOnClickListener(this);
@@ -51,14 +52,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_division :
             case R.id.btn_multiplication :
             case R.id.btn_subtraction :
+
                 handleOperatorClick(button.getText().toString());
                 break;
 
             //Handling clear button
+
             case R.id.btn_clear:
                 currentNumber = "";
                 totalCalculation = "";
                 break;
+
 
             //Handle calculation
             case R.id.btn_equals:
@@ -103,6 +107,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private double div(double a, double b){
         return a / b;
     }
+    private double mod(double a,double b)   {return a % b;   }
 
     private void calculateAnswer(){
         //Use totalCalculation string to get final answer and display it
