@@ -27,9 +27,10 @@
 
     <include
         android:id="@+id/answer_view"
+        layout="@layout/content_answer_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        layout="@layout/content_answer_view"
+        android:background="#615D5D"
         app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
