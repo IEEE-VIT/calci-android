@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <View
-        android:id="@+id/divider"
+    <include
+        android:id="@+id/answer_view"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        layout="@layout/content_answer_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_weight="0.2"/>
 
     <include
         android:id="@+id/number_board"
@@ -22,17 +24,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/answer_view"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_weight="0.8"/>
 
-    <include
-        android:id="@+id/answer_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        layout="@layout/content_answer_view"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
