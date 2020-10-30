@@ -83,7 +83,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             totalCalculation += currentNumber + operator;
             currentNumber = "";
         } else {
-            totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
+            if(totalCalculation.length()>0){
+                totalCalculation = totalCalculation.substring(0, totalCalculation.length() - 1);
+            }
             totalCalculation += operator;
         }
     }
