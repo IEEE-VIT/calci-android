@@ -1,24 +1,28 @@
-<p align="center"><img width="40%" src="https://hacktoberfest.digitalocean.com/assets/logo-hf19-full-10f3c000cea930c76acc1dedc516ea7118b95353220869a3051848e45ff1d656.svg"/></p>
+# Hacktoberfest, 2023 with IEEE-VIT Student Branch
 
-# Hacktoberfest, 2019 with IEEE-VIT Student Branch
+<img src="https://files.ieeevit.org/Hacktoberfest-23/Calci.png" alt="README Banner">
 
-Calci is a simple android calculator app. This repository was created to help deveopers get started with Open Source during [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
+## About
+
+Calci is a simple android calculator app. This repository was created to help deveopers get started with Open Source during [Hacktoberfest](https://hacktoberfest.com/)
 > NOTE: Check out `issues` labelled as `Hacktoberfest` and start contributing!
 
-Made with :heart: by [IEEE-VIT](https://ieeevit.com)
+Made with :heart: by [IEEE-VIT](https://ieeevit.org)
 
-Support Open Source by participating in [Hacktoberfest](https://hacktoberfest.digitalocean.com/):yellow_heart:
+Support Open Source by participating in [Hacktoberfest](https://hacktoberfest.com/):yellow_heart:
 
 ## Getting started
 
-1. Download the Calci source code from https://github.com/IEEE-VIT/Calci-Android/ ( git clone https://github.com/IEEE-VIT/Calci-Android.git )
-
-2. Open the project in the Studio (note that it should be opened, NOT imported).
-
-3. You are ready to compile Calci
+1. Clone the repository: `git clone https://github.com/IEEE-VIT/calci-android.git`
+2. Checkout to a new branch: `git checkout -b my-amazing-feature`
+3. Make your changes.
+4. `git add .`
+5. `git commit -m "A short description of the feature."`
+6. `git push origin my-amazing-feature`
+7. Open a pull request to the curated issues.
 
 ## Contributing
-To start contributing, check out [CONTRIBUTING.md](https://github.com/mayankshah1607/SimpleMath-NodeJS/blob/master/CONTRIBUTING.md). New contributors are always welcome to support this project. Check out issues labelled as `Hacktoberfest` if you are up for some grabs! :)
+To start contributing, check out [CONTRIBUTING.md](https://github.com/IEEE-VIT/calci-android/blob/master/CONTRIBUTING.md). New contributors are always welcome to support this project. Check out issues labelled as `Hacktoberfest` if you are up for some grabs! :)
 
 ## License
-This project is licensed under [MIT](https://github.com/IEEE-VIT/SimpleMath-NodeJS/blob/master/LICENSE)
+This project is licensed under [MIT](https://github.com/IEEE-VIT/calci-android/blob/master/LICENSE)
